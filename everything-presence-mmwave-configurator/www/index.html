@@ -3,9 +3,11 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Everything Presence Lite - Zone Configurator</title>
   <link rel="stylesheet" href="styles.css">
-  <!-- Include Google Fonts -->
+  
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
@@ -15,125 +17,112 @@
   <div id="container">
     <header>
       <h1>Everything Presence Lite - Zone Configurator</h1>
-      <button id="dark-mode-toggle">🌙</button>
+      <button id="dark-mode-toggle" class="toggle-button">🌙</button>
     </header>
 
-    <div id="main-content">
-      <div id="controls">
-        <!-- Device Selection Drop-Down -->
+    <main id="main-content">
+      <section id="controls">
         <div class="control-group">
           <label for="device-select">Select Device:</label>
-          <select id="device-select">
+          <select id="device-select" class="control-input">
             <option value="" disabled selected>Loading devices...</option>
           </select>
         </div>
 
-        <!-- Entity Selection Drop-Down -->
         <div class="control-group">
           <label for="entity-select">Select Entities:</label>
-          <select id="entity-select" multiple>
-            <!-- Options will be populated based on selected device -->
+          <select id="entity-select" class="control-input" multiple>
+            <!-- Options populated based on selected device -->
           </select>
         </div>
 
-        <!-- Refresh Rate Controls -->
         <div class="control-group">
-          <label for="refreshRateInput" hidden>Refresh Rate (ms):</label>
-          <input type="number" id="refreshRateInput" value="500" min="100" step="100" hidden>
-          <button id="setRefreshRateButton" hidden>Set Refresh Rate</button>
-          <button id="toggleRefreshButton">Stop Refresh</button>
+          <label for="refreshRateInput" class="control-label" hidden>Refresh Rate (ms):</label>
+          <input type="number" id="refreshRateInput" value="500" min="100" step="100" class="control-input" hidden>
+          <button id="setRefreshRateButton" class="control-button" hidden>Set Refresh Rate</button>
+          <button id="toggleRefreshButton" class="control-button">Stop Refresh</button>
         </div>
 
-        <!-- Status Indicator -->
-        <div id="statusIndicator">Status: Not Refreshing</div>
-      </div>
+        <div id="statusIndicator" class="status-indicator">Status: Not Refreshing</div>
+      </section>
 
-      <!-- Display Target Tracking Information and Occupancy State -->
-      <!-- Target Tracking Info Box -->
-        <div id="target-tracking-info" class="info-box">
-          <h3>Target Tracking Information</h3>
-          <table>
-              <thead>
-                  <tr>
-                      <th>Target</th>
-                      <th>Status</th>
-                      <th>X Coordinate (mm)</th>
-                      <th>Y Coordinate (mm)</th>
-                      <th>Speed (mm/s)</th>
-                      <th>Resolution</th>
-                      <th>Angle (°)</th>
-                      <th>Distance (mm)</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr id="target-1">
-                      <td>Target 1</td>
-                      <td id="target-1-status">N/A</td>
-                      <td id="target-1-x">N/A</td>
-                      <td id="target-1-y">N/A</td>
-                      <td id="target-1-speed">N/A</td>
-                      <td id="target-1-resolution">N/A</td>
-                      <td id="target-1-angle">N/A</td>
-                      <td id="target-1-distance">N/A</td>
-                  </tr>
-                  <tr id="target-2">
-                      <td>Target 2</td>
-                      <td id="target-2-status">N/A</td>
-                      <td id="target-2-x">N/A</td>
-                      <td id="target-2-y">N/A</td>
-                      <td id="target-2-speed">N/A</td>
-                      <td id="target-2-resolution">N/A</td>
-                      <td id="target-2-angle">N/A</td>
-                      <td id="target-2-distance">N/A</td>
-                  </tr>
-                  <tr id="target-3">
-                      <td>Target 3</td>
-                      <td id="target-3-status">N/A</td>
-                      <td id="target-3-x">N/A</td>
-                      <td id="target-3-y">N/A</td>
-                      <td id="target-3-speed">N/A</td>
-                      <td id="target-3-resolution">N/A</td>
-                      <td id="target-3-angle">N/A</td>
-                      <td id="target-3-distance">N/A</td>
-                  </tr>
-              </tbody>
-          </table>
-        </div>
+      <section id="target-tracking-info" class="info-box">
+        <h3>Target Tracking Information</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Target</th>
+              <th>Status</th>
+              <th>X Coordinate (mm)</th>
+              <th>Y Coordinate (mm)</th>
+              <th>Speed (mm/s)</th>
+              <th>Resolution</th>
+              <th>Angle (°)</th>
+              <th>Distance (mm)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr id="target-1">
+              <td>Target 1</td>
+              <td id="target-1-status">N/A</td>
+              <td id="target-1-x">N/A</td>
+              <td id="target-1-y">N/A</td>
+              <td id="target-1-speed">N/A</td>
+              <td id="target-1-resolution">N/A</td>
+              <td id="target-1-angle">N/A</td>
+              <td id="target-1-distance">N/A</td>
+            </tr>
+            <tr id="target-2">
+              <td>Target 2</td>
+              <td id="target-2-status">N/A</td>
+              <td id="target-2-x">N/A</td>
+              <td id="target-2-y">N/A</td>
+              <td id="target-2-speed">N/A</td>
+              <td id="target-2-resolution">N/A</td>
+              <td id="target-2-angle">N/A</td>
+              <td id="target-2-distance">N/A</td>
+            </tr>
+            <tr id="target-3">
+              <td>Target 3</td>
+              <td id="target-3-status">N/A</td>
+              <td id="target-3-x">N/A</td>
+              <td id="target-3-y">N/A</td>
+              <td id="target-3-speed">N/A</td>
+              <td id="target-3-resolution">N/A</td>
+              <td id="target-3-angle">N/A</td>
+              <td id="target-3-distance">N/A</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
 
-
-        <!-- <div class="info-group">
-          <h2>Occupancy State</h2>
-          <p id="occupancy-state">No data available.</p>
-        </div>
-      </div> -->
-
-      <div class="control-group">
+      <section id="zone-type-selection" class="control-group">
         <label for="zone-type-select">Zone Type:</label>
-        <select id="zone-type-select">
+        <select id="zone-type-select" class="control-input">
           <option value="regular" selected>Regular Zone</option>
           <option value="exclusion">Exclusion Zone</option>
         </select>
-      </div>
+      </section>
 
-      <!-- Visualization Canvas -->
-      <div id="canvas-container">
+      <section id="canvas-container">
         <canvas id="visualizationCanvas" width="960" height="600"></canvas>
-      </div>
+      </section>
 
-      <div id="save-controls">
-      <div id="save-control-group">
-        <button id="saveZonesButton">Save Zones</button>
-      </div>
-      </div>
+      <section id="save-controls">
+        <div class="control-group">
+          <button id="saveZonesButton" class="control-button">Save Zones</button>
+          <button id="persistenceToggleButton" class="control-button">Enable Persistence</button>
+        </div>
+      </section>
 
-      <!-- Coordinates Output -->
-      <div id="coordinatesOutput"></div>
-    </div>
+      <section id="coordinatesOutput" class="coordinates-output"></section>
+    </main>
 
     <footer>
       <p>&copy; Everything Presence Lite - Zone Configurator</p>
     </footer>
   </div>
+
   <script src="script.js"></script>
 </body>
 
